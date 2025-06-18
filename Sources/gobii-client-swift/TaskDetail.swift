@@ -14,10 +14,23 @@ public struct TaskDetail: Identifiable, Hashable, Codable {
     public var prompt: String?
     public var outputSchema: String?
     public let status: StatusEnum?
-    public let createdAt: Date?
-    public let updatedAt: Date?
+    public let createdAt: String?
+    public let updatedAt: String?
     public let errorMessage: String?
     public var wait: Int?
+    
+    public var createdAtDate: Date? {
+            guard let createdAt = createdAt else { return nil }
+            let formatter = ISO8601DateFormatter()
+            return formatter.date(from: createdAt)
+        }
+
+        public var updatedAtDate: Date? {
+            guard let updatedAt = updatedAt else { return nil }
+            let formatter = ISO8601DateFormatter()
+            return formatter.date(from: updatedAt)
+        }
+
     
     public init(id: String? = nil, agent: String? = nil, agentId: String? = nil, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, errorMessage: String? = nil, wait: Int? = nil) {
         self.id = id
