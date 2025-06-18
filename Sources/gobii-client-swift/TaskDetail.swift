@@ -19,7 +19,7 @@ public struct TaskDetail: Identifiable, Hashable, Codable {
     let errorMessage: String?
     var wait: Int?
     
-    public init(id: String?, agent: String? = nil, agentId: String?, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum?, createdAt: Date?, updatedAt: Date?, errorMessage: String?, wait: Int? = nil) {
+    public init(id: String? = nil, agent: String? = nil, agentId: String? = nil, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, errorMessage: String? = nil, wait: Int? = nil) {
         self.id = id
         self.agent = agent
         self.agentId = agentId
