@@ -9,15 +9,15 @@ public enum StatusEnum: String, Codable {
 
 public struct TaskDetail: Identifiable, Hashable, Codable {
     public let id: String?
-    var agent: String?
-    let agentId: String?
-    var prompt: String?
-    var outputSchema: String?
-    let status: StatusEnum?
-    let createdAt: Date?
-    let updatedAt: Date?
-    let errorMessage: String?
-    var wait: Int?
+    public var agent: String?
+    public let agentId: String?
+    public var prompt: String?
+    public var outputSchema: String?
+    public let status: StatusEnum?
+    public let createdAt: Date?
+    public let updatedAt: Date?
+    public let errorMessage: String?
+    public var wait: Int?
     
     public init(id: String? = nil, agent: String? = nil, agentId: String? = nil, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, errorMessage: String? = nil, wait: Int? = nil) {
         self.id = id
