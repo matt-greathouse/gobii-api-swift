@@ -1,6 +1,6 @@
 import Foundation
 
-enum StatusEnum: String, Codable {
+public enum StatusEnum: String, Codable {
     case pending
     case running
     case complete
@@ -18,6 +18,19 @@ public struct TaskDetail: Identifiable, Hashable, Codable {
     let updatedAt: Date?
     let errorMessage: String?
     var wait: Int?
+    
+    public init(id: String?, agent: String? = nil, agentId: String?, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum?, createdAt: Date?, updatedAt: Date?, errorMessage: String?, wait: Int? = nil) {
+        self.id = id
+        self.agent = agent
+        self.agentId = agentId
+        self.prompt = prompt
+        self.outputSchema = outputSchema
+        self.status = status
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.errorMessage = errorMessage
+        self.wait = wait
+    }
     
     public static func == (lhs: TaskDetail, rhs: TaskDetail) -> Bool {
         return lhs.id == rhs.id
