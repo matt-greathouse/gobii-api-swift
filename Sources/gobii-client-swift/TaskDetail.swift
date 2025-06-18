@@ -5,6 +5,7 @@ public enum StatusEnum: String, Codable {
     case running
     case complete
     case failed
+    case inProgress = "in_progress"
 }
 
 public struct TaskDetail: Identifiable, Hashable, Codable {
