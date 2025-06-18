@@ -20,19 +20,19 @@ public struct TaskDetail: Identifiable, Hashable, Codable {
     public var wait: Int?
     
     public var createdAtDate: Date? {
-            guard let createdAt = createdAt else { return nil }
-            let formatter = ISO8601DateFormatter()
-            return formatter.date(from: createdAt)
-        }
+        guard let createdAt = createdAt else { return nil }
+        let formatter = ISO8601DateFormatter()
+        return formatter.date(from: createdAt)
+    }
 
-        public var updatedAtDate: Date? {
-            guard let updatedAt = updatedAt else { return nil }
-            let formatter = ISO8601DateFormatter()
-            return formatter.date(from: updatedAt)
-        }
+    public var updatedAtDate: Date? {
+        guard let updatedAt = updatedAt else { return nil }
+        let formatter = ISO8601DateFormatter()
+        return formatter.date(from: updatedAt)
+    }
 
     
-    public init(id: String? = nil, agent: String? = nil, agentId: String? = nil, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, errorMessage: String? = nil, wait: Int? = nil) {
+    public init(id: String? = nil, agent: String? = nil, agentId: String? = nil, prompt: String? = nil, outputSchema: String? = nil, status: StatusEnum? = nil, createdAt: String? = nil, updatedAt: String? = nil, errorMessage: String? = nil, wait: Int? = nil) {
         self.id = id
         self.agent = agent
         self.agentId = agentId
