@@ -5,20 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "gobii-client-swift",
+    platforms: [
+        .iOS(.v15),
+        .macOS(.v12)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "gobii-client-swift",
-            targets: ["gobii-client-swift"]),
+            name: "GobiiApiClient",
+            targets: ["gobii-client-swift"]
+        ),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "gobii-client-swift"),
-        .testTarget(
-            name: "gobii-client-swiftTests",
-            dependencies: ["gobii-client-swift"]
-        ),
+        .target(name: "gobii-client-swift"),
     ]
 )
