@@ -52,7 +52,7 @@ actor ApiKeyStorage {
 public final class GobiiApiClient: Sendable {
     private let urlSession: URLSession
 
-    init(debugMode: Bool = false, urlSession: URLSession = .shared) {
+    public init(debugMode: Bool = false, urlSession: URLSession = .shared) {
         self.debugMode = debugMode
         self.urlSession = urlSession
     }
@@ -68,7 +68,7 @@ public final class GobiiApiClient: Sendable {
         return await apiKeyStorage.getApiKey()
     }
 
-    func setApiKey(_ key: String) {
+    public func setApiKey(_ key: String) {
         Task {
             await apiKeyStorage.setApiKey(key)
         }
@@ -78,7 +78,7 @@ public final class GobiiApiClient: Sendable {
     /// - Parameter task: The Task object to run.
     /// - Returns: The Task object returned by the server.
     /// - Throws: GobiiApiError for various failure cases.
-    func runTask(_ task: TaskDetail) async throws -> TaskDetail {
+    public func runTask(_ task: TaskDetail) async throws -> TaskDetail {
         guard let apiKey = await apiKeyStorage.getApiKey(), !apiKey.isEmpty else {
             throw GobiiApiError.missingApiKey
         }
@@ -151,7 +151,7 @@ public final class GobiiApiClient: Sendable {
     /// - Parameter id: The UUID of the task to fetch.
     /// - Returns: The Task object with updated status.
     /// - Throws: GobiiApiError for various failure cases.
-    func fetchTaskStatus(id: String) async throws -> TaskDetail {
+    public func fetchTaskStatus(id: String) async throws -> TaskDetail {
         // Retrieve API key
         guard let apiKey = await apiKeyStorage.getApiKey(), !apiKey.isEmpty else {
             throw GobiiApiError.missingApiKey
