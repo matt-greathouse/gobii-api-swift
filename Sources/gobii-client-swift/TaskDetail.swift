@@ -7,7 +7,7 @@ enum StatusEnum: String, Codable {
     case failed
 }
 
-struct TaskDetail: Codable {
+struct TaskDetail: Identifiable, Hashable, Codable {
     let id: String?
     var agent: String?
     let agentId: String?
@@ -18,4 +18,8 @@ struct TaskDetail: Codable {
     let updatedAt: Date?
     let errorMessage: String?
     var wait: Int?
+    
+    static func == (lhs: TaskDetail, rhs: TaskDetail) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
