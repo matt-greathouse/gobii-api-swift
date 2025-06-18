@@ -49,7 +49,7 @@ actor ApiKeyStorage {
 }
 
 @available(iOS 15.0, macOS 12.0, *)
-final class GobiiApiClient: Sendable {
+public final class GobiiApiClient: Sendable {
     private let urlSession: URLSession
 
     init(debugMode: Bool = false, urlSession: URLSession = .shared) {
