@@ -1,6 +1,6 @@
 import Foundation
 
-public enum StatusEnum: String, Codable {
+public enum StatusEnum: String, Codable, Sendable {
     case pending
     case in_progress
     case completed
@@ -8,7 +8,7 @@ public enum StatusEnum: String, Codable {
     case cancelled
 }
 
-public struct TaskDetail: Identifiable, Hashable, Codable {
+public struct TaskDetail: Identifiable, Hashable, Codable, Sendable {
     public let id: String?
     public var agent: String?
     public let agentId: String?
