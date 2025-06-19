@@ -9,15 +9,15 @@ public enum StatusEnum: String, Codable, Sendable {
 }
 
 public struct TaskDetail: Identifiable, Hashable, Codable, Sendable {
-    public let id: String?
+    public var id: String?
     public var agent: String?
-    public let agentId: String?
+    public var agentId: String?
     public var prompt: String?
     public var outputSchema: String?
-    public let status: StatusEnum?
-    public let createdAt: String?
-    public let updatedAt: String?
-    public let errorMessage: String?
+    public var status: StatusEnum?
+    public var createdAt: String?
+    public var updatedAt: String?
+    public var errorMessage: String?
     public var wait: Int?
     public var result: String?
     
