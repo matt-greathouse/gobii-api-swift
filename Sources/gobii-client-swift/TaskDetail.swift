@@ -2,10 +2,10 @@ import Foundation
 
 public enum StatusEnum: String, Codable {
     case pending
-    case running
-    case complete
+    case in_progress
+    case completed
     case failed
-    case inProgress = "in_progress"
+    case cancelled
 }
 
 public struct TaskDetail: Identifiable, Hashable, Codable {
