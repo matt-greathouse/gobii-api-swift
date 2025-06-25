@@ -68,10 +68,8 @@ public final class GobiiApiClient: Sendable {
         return await apiKeyStorage.getApiKey()
     }
 
-    public func setApiKey(_ key: String) {
-        Task {
-            await apiKeyStorage.setApiKey(key)
-        }
+    public func setApiKey(_ key: String) async {
+        await apiKeyStorage.setApiKey(key)
     }
 
     /// Runs the given task by sending a POST request to /tasks/browser-use/ endpoint.
